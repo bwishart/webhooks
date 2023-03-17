@@ -1,0 +1,21 @@
+// get /
+curl -X GET 'http://localhost:8000/'
+
+// get /help
+curl -X GET 'http://localhost:8000/help'
+
+// get /risk  - GET not supported, use POST
+curl -X GET 'http://localhost:8000/risk'
+
+// post /risk
+curl -i  --request POST "http://localhost:8000/risk" \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "operation": "password-verify",
+    "parameters": {
+      "username": "scott",
+      "password": "scott11111"
+    },
+    "requestedAttributes": ["cn", "mobile_number", "displayName"]
+}'
+
