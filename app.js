@@ -1,8 +1,9 @@
+require('dotenv').config()
 const express = require('express')
 const handleRisk = require('./operations/risk')
 
 
-const PORT = 8000           // port to listen on
+const PORT  = process.env.PORT      // port to listen on
 
 const app = express()
 app.use(express.json());
